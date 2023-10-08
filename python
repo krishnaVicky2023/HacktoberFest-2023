@@ -1,0 +1,28 @@
+class ComplexNumber():
+ 
+    def init(self):
+        self.real = int(input("Enter Real part: "))
+        self.imaginary = int(input("Enter Imaginary part: "))
+ 
+    def display(self):
+        sign = "+" if(self.imaginary >= 0) else ""
+        print(self.real, sign, self.imaginary, "j", sep="")
+ 
+    def multiply(self, c1, c2):
+        res = complex(c1.real, c1.imaginary) * complex(c1.real, c1.imaginary)
+        self.real = res.real
+        self.imaginary = res.imag
+ 
+ 
+print("First complex number: ")
+c1 = ComplexNumber()
+c1.init()
+ 
+print("Second complex number: ")
+c2 = ComplexNumber()
+c2.init()
+ 
+print("Result = ")
+c3 = ComplexNumber()
+c3.multiply(c1, c2)
+c3.display()
